@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Meme Maker | Meme Generator - Create Your Own Memes!</title>
+    <meta name="description" content="Make your own memes with the #1 Meme Generator in the world!">
+    <link rel="favicon" href="favicon.png">
+</head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+<style>
+    body {
+        /* 設置背景圖片 */
+        background-image: url('img.gif');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: #18fd12;
+        height: 100vh;
+        margin: 0;
+    }
+    .banner {
+        background-color: #333;
+        font-family: 'Varela Round', sans-serif;
+        color: white;
+        padding: 10px 16px;
+        display: flex;
+        align-items: center;
+        height: 36px;
+    }
+    .banner-title {
+        text-align: center;
+        font-size: 20px;
+        color: #000000;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        margin-right: auto;
+        width: 15%;
+        height: 40px;
+    }
+    a {
+        text-decoration: none;
+    }
+    a:link {
+        color: #ffffff;
+    }
+    a:visited {
+        color: #ffffff;
+    }
+    p {
+        color: #ffffff;
+        font-style: oblique;
+        font-size: large;
+        font-weight: 400;
+        font-stretch: 100%;
+        text-align: center;
+        position: fixed;
+        bottom: 40%;
+        left: 20%;
+        right: 20%;
+    }
+    .music-img {
+        background-color: #18fd12;
+        padding: 20px 20px;
+        display: flex;
+        align-items: center;
+        height: 36px;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+    }
+</style>
+<body>
+    <div class="banner">
+        <a class="banner-title" href="https://memes.tw/en">
+            <b>Meme House</b>
+        </a>
+    </div>
+
+    <p>網頁當機了<br>所以你只能在這裡看這隻龍跳舞</p>
+
+    <audio id="dragon dance">
+        <source src="music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <img class="music-img" src="play.png" id="playPauseButton" onclick="togglePlayPause()" />
+
+    <script>
+        var audio = document.getElementById("dragon dance");
+        var playPauseButton = document.getElementById("playPauseButton");
+
+        function togglePlayPause() {
+            if (audio.paused) {
+                audio.play();
+                playPauseButton.src = "pause.png";
+            } else {
+                audio.pause();
+                playPauseButton.src = "play.png";
+            }
+        }
+
+        audio.loop = true;
+    </script>
+</body>
+</html>
